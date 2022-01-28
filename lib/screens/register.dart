@@ -194,7 +194,7 @@ class _RegisterState extends State<Register>{
       'password' : password
     };
 
-    var res = await Network().auth(data, '/registro');
+    var res = await Network().auth(data, '/register');
     var body = json.decode(res.body);
     if(body['success']){
       SharedPreferences localStorage = await SharedPreferences.getInstance();

@@ -1,13 +1,17 @@
 import 'dart:async';
+import 'dart:convert';
 
+import 'package:inventario/network/api.dart';
 import 'package:inventario/network/search_api.dart';
 import 'package:inventario/model/devices.dart';
 import 'package:inventario/screens/create.dart';
 import 'package:inventario/screens/detalhes.dart';
+import 'package:inventario/screens/login.dart';
 import 'package:inventario/widget/search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:inventario/env.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -68,8 +72,16 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) => Scaffold(
     backgroundColor: Colors.white,
     appBar: AppBar(
-      backgroundColor: Colors.lightBlue,
+      //backgroundColor: Colors.lightBlue,
       title: Text("Inventário"),
+      actions: [
+        IconButton(
+          icon: Icon(Icons.power_settings_new),
+          onPressed: (){
+            logout();
+          },
+        )
+      ],
       centerTitle: true,
     ),
     body: Column(
@@ -92,6 +104,7 @@ class HomeState extends State<Home> {
     floatingActionButton: Stack(
       fit: StackFit.expand,
       children: [
+        /*
         Positioned(
           left: 30,
           bottom: 20,
@@ -108,7 +121,7 @@ class HomeState extends State<Home> {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-        ),
+        ),*/
         Positioned(
           bottom: 20,
           right: 30,
@@ -135,6 +148,20 @@ class HomeState extends State<Home> {
 
 
   );
+
+  //Fazer Logout
+  void logout() async{
+    var res = await Network().getData('/logout');
+    var body = json.decode(res.body);
+    if(body['success']){
+      SharedPreferences localStorage = await SharedPreferences.getInstance();
+      localStorage.remove('user');
+      localStorage.remove('token');
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context)=>Login()));
+    }
+  }
 
   Widget buildSearch() => SearchWidget(
     text: query,
@@ -170,3 +197,4 @@ class HomeState extends State<Home> {
     },
   );
 }
+
