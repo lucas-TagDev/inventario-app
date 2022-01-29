@@ -72,8 +72,8 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) => Scaffold(
     backgroundColor: Colors.white,
     appBar: AppBar(
-      //backgroundColor: Colors.lightBlue,
-      title: Text("Inventário"),
+      backgroundColor: Colors.black,
+      title: Text("Inventário", style: TextStyle(color: Colors.greenAccent),),
       actions: [
         IconButton(
           icon: Icon(Icons.power_settings_new),
@@ -126,6 +126,7 @@ class HomeState extends State<Home> {
           bottom: 20,
           right: 30,
           child: FloatingActionButton(
+            backgroundColor: Colors.black,
             heroTag: 'next',
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (_) {
@@ -134,6 +135,7 @@ class HomeState extends State<Home> {
             },
             child: const Icon(
               Icons.add,
+              color: Colors.greenAccent,
               size: 40,
             ),
             shape: RoundedRectangleBorder(

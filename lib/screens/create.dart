@@ -135,7 +135,8 @@ class _CreateState extends State<Create> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Criar"),
+          backgroundColor: Colors.black,
+          title: Text("Criar", style: TextStyle(color: Colors.greenAccent),),
         ),
 
         bottomNavigationBar: BottomAppBar(
@@ -143,6 +144,7 @@ class _CreateState extends State<Create> {
             Padding(
               padding: EdgeInsets.all(30),
               child: ButtonTheme(
+                buttonColor: Colors.black,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                 child: RaisedButton(
                   onPressed: () {
@@ -153,8 +155,8 @@ class _CreateState extends State<Create> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.add_outlined, color: Colors.white,),
-                      Text("CADASTRAR", style: TextStyle(color: Colors.white),)
+                      Icon(Icons.add_outlined, color: Colors.greenAccent,),
+                      Text("CADASTRAR", style: TextStyle(color: Colors.greenAccent),)
                     ],
                   ),
                 ),
@@ -219,9 +221,10 @@ class _CreateState extends State<Create> {
           ),
         ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
         onPressed: _codScanner,
         tooltip: 'Scanear Codigo',
-        child: Icon(Icons.settings_overscan),
+        child: Icon(Icons.settings_overscan, color: Colors.greenAccent,),
       ),
     );
   }

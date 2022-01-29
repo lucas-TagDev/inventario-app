@@ -130,7 +130,8 @@ class _EditState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Editar"),
+          backgroundColor: Colors.black,
+          title: Text("Editar", style: TextStyle(color: Colors.greenAccent),),
         ),
         bottomNavigationBar: BottomAppBar(
           child: Padding(
@@ -138,6 +139,7 @@ class _EditState extends State<Edit> {
             child: ButtonTheme(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               child: RaisedButton(
+                color: Colors.black,
                 onPressed: () {
                   _onConfirm(context);
                 },
@@ -145,7 +147,7 @@ class _EditState extends State<Edit> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     //Icon(Icons.visibility, color: Colors.white,),
-                    Text("ATUALIZAR", style: TextStyle(color: Colors.white),)
+                    Text("ATUALIZAR", style: TextStyle(color: Colors.greenAccent),)
                   ],
                 ),
               ),

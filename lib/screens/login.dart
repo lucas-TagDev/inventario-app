@@ -138,7 +138,7 @@ class _LoginState extends State<Login>{
                   Text(
                     "Não possui uma conta? ",
                     style: TextStyle(
-                      color: Color(0xFF00BFFC),
+                      color: Colors.greenAccent,
                       fontSize: 16,
                     ),
                   ),

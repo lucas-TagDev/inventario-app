@@ -21,14 +21,14 @@ class _TabsPageState extends State<TabsPage> {
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.grey,
         backgroundColor: Colors.black,
-        selectedItemColor: Colors.white,
+        selectedItemColor: Colors.greenAccent,
         currentIndex: _currentIndex,
         onTap: (int index) => setState(() => _currentIndex = index),
         items: <BottomNavigationBarItem>[
           for (final tabItem in TabNavigationItem.items)
             BottomNavigationBarItem(
               icon: tabItem.icon,
-              backgroundColor: Colors.black,
+              //backgroundColor: Colors.black,
               title: tabItem.title,
             ),
         ],

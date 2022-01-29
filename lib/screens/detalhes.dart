@@ -73,7 +73,8 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalhes'),
+        backgroundColor: Colors.black,
+        title: Text('Detalhes', style: TextStyle(color: Colors.greenAccent),),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.delete),
@@ -243,7 +244,8 @@ class _DetailsState extends State<Details> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.edit),
+        backgroundColor: Colors.black,
+        child: Icon(Icons.edit, color: Colors.greenAccent,),
         onPressed: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (BuildContext context) => Edit(device: widget.device),

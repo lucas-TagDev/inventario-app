@@ -130,7 +130,7 @@ class _RegisterState extends State<Register>{
                               ),
                             ),
                           ),
-                          color: Color(0xFF00B1FF),
+                          color: Colors.black,
                           disabledColor: Colors.grey,
                           shape: new RoundedRectangleBorder(
                               borderRadius:
@@ -153,7 +153,7 @@ class _RegisterState extends State<Register>{
                   Text(
                     "Já possui conta ",
                     style: TextStyle(
-                      color: Color(0xFF00B1FF),
+                      color: Colors.greenAccent,
                       fontSize: 16,
                     ),
                   ),
